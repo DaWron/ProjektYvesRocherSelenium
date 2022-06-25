@@ -12,6 +12,8 @@ from my_account_page import MyAccountPage
 from registration_page import RegistrationPage
 from page_locators import *
 
+
+
 class YvesRocherTests(unittest.TestCase):
     def setUp(self):
         # Warunki wstepne
@@ -82,7 +84,11 @@ class YvesRocherTests(unittest.TestCase):
         sleep(1)
         # 3. Kliknij w pole „Dla mężczyzn”
         self.home_page.going_to_for_men()
-        sleep(1)
+        sleep(5)
+        # Zamykania okna (trzy poniższe linie) - przełacza się na iframe, znajduje przycisk zamykający okienko, i przełącza sie na własciwa storne:
+        self.driver.switch_to.frame(self.driver.find_element(By.ID,"mctr_iframe"))
+        self.driver.find_element(By.XPATH,'/html/body/main/div/form/div/div[2]/button').click()
+        self.driver.switch_to.default_content()
         # 4. Kliknij w pole produktu "Balsam po goleniu"
         self.men_page.balm_click()
         sleep(1)
