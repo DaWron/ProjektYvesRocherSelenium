@@ -5,7 +5,7 @@ class MainPageLocators:
     MY_ACCOUNT = (By.XPATH, '/html/body/header/div[9]/account-mini')
     SEARCH = (By.XPATH, '/html/body/header/div[4]/form/input')
     SEARCH_ICON = (By.XPATH, '/html/body/header/div[4]/form/button[1]')
-    FOR_MEN = (By.XPATH, '/html/body/div[2]/nav/ul/li[9]')
+    FOR_MEN = (By.XPATH, '/html/body/div[2]/nav/ul/li[8]/a/span')
     BASKET = (By.XPATH, '/html/body/header/div[10]')
 class MyAccountLocators:
     CREATE_ACCOUNT = (By.XPATH, '/html/body/main/div[1]/div/div/div[2]/div[1]/a')
@@ -24,7 +24,7 @@ class ProductsForMenLocators:
     BALM = (By.LINK_TEXT, 'Balsam po goleniu')
     FOAM = (By.LINK_TEXT, 'Pianka do golenia')
 class ProductLocators:
-    ADD_CART = (By.XPATH, '/html/body/main/article/div/div[2]/aside/div[1]/div[5]/cart-add[1]/div')
+    ADD_CART = (By.XPATH, '/html/body/main/article/div/div[2]/aside/div/div[6]/cart-add[1]/div/div[2]')
 class ProductCartWindowLocators:
     CROSS_BUTTON = (By.XPATH, '//*[@id="micromodal-root"]/div/div/div[1]/button')
 class CartLocators:
