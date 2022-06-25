@@ -47,6 +47,11 @@ class YvesRocherTests(unittest.TestCase):
         self.home_page.going_to_my_account()
         # 4. Kliknij przycisk „Załóż konto”
         self.regi_page.going_to_registration()
+        sleep(5)
+        # Zamykania okna (trzy poniższe linie) - przełacza się na iframe, znajduje przycisk zamykający okienko, i przełącza sie na własciwa storne:
+        self.driver.switch_to.frame(self.driver.find_element(By.ID, "mctr_iframe"))
+        self.driver.find_element(By.XPATH, '/html/body/main/div/form/div/div[2]/button').click()
+        self.driver.switch_to.default_content()
         # W tej funkcji realizuja się punkty 5-12 - rejestracja uzytkownika (z blednym mailem)
         self.new_regi_page.registration()
         sleep(3)
@@ -66,6 +71,7 @@ class YvesRocherTests(unittest.TestCase):
         self.driver.find_element(*MainPageLocators.SEARCH).send_keys(product)
         # 4.Kliknij ikonę lupki - „Szukaj”
         self.driver.find_element(*MainPageLocators.SEARCH_ICON).click()
+
 
         ###Oczekiwany rezultat###
 
